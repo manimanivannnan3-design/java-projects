@@ -26,7 +26,6 @@ public class Main{
        Student[] Students=new Student[count];
        for(int i=0; i<count; i++)
        {
-        try{
            System.out.println("Enter your student name ");
            myScanner.nextLine();
            String name=myScanner.nextLine();
@@ -35,11 +34,6 @@ public class Main{
            System.out.println("Enter your indexno");
            int indexno=myScanner.nextInt();
            Students[i] =new Student(name,age,indexno);
-           }
-           catch(Exception e)
-           {
-               System.out.println(e);
-           }
            
        }
        System.out.println("Your students details");

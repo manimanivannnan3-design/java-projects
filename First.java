@@ -17,7 +17,7 @@ class Student{
         System.out.println("indexno is :"+indexno);
     }
 }
-public class Main{
+public class First{
     public static void main(String[] args)
     {
         Scanner myScanner=new Scanner(System.in);

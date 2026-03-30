@@ -1,46 +1,59 @@
 import java.util.Scanner;
 class Student{
-    String name;
-    int age;
-    int indexno;
-    
-    Student(String name,int age,int indexno)
-    {
-        this.name=name;
-        this.age=age;
-        this.indexno=indexno;
-    }
-    
-    void display(){
-        System.out.println("name is : "+name);
-        System.out.println("age is : "+age);
-        System.out.println("indexno is :"+indexno);
-    }
+  String name;
+  int marks;
+  
+  Student(String name,int marks){
+      this.name=name;
+      this.marks=marks;
+  }
+  void display(){
+      System.out.println("student name is -: "+name);
+      System.out.println(name+" student marks is-: "+marks);
+  }
 }
+
 public class First{
-    public static void main(String[] args)
-    {
+    public static void main(String[] args){
         Scanner myScanner=new Scanner(System.in);
-       System.out.println("Enter how much student you want to add ");
-       int count=myScanner.nextInt();
-       Student[] Students=new Student[count];
-       for(int i=0; i<count; i++)
-       {
-           System.out.println("Enter your student name ");
-           myScanner.nextLine();
-           String name=myScanner.nextLine();
-           System.out.println("Enter your age");
-           int age=myScanner.nextInt();
-           System.out.println("Enter your indexno");
-           int indexno=myScanner.nextInt();
-           Students[i] =new Student(name,age,indexno);
-           
-       }
-       System.out.println("Your students details");
-       System.out.println();
-       for(int j=0; j<count; j++){
-           Students[j].display();
-           System.out.println();
-       }
+        int count=myScanner.nextInt();
+        myScanner.nextLine();
+        Student[] students=new Student[count];
+        for(int i=0; i<count; i++){
+            System.out.println("Enter your "+i+"  student name");
+            String name=myScanner.nextLine();
+            System.out.println("Enter your student "+name+" marks");
+            int marks=myScanner.nextInt();
+            myScanner.nextLine();
+            students[i]=new Student(name,marks);
+        }
+      System.out.println("Student details");
+      for(int j=0; j<count; j++){
+        students[j].display();
+      }
+      int highest_marks=students[0].marks;
+      String highest_marks_student=students[0].name;
+      int lowest_marks=students[0].marks;
+      String lowest_marks_student=students[0].name;
+      for(int m=1; m<count; m++){
+          if(highest_marks<(students[m].marks)){
+              highest_marks=students[m].marks;
+              highest_marks_student=students[m].name;
+          }
+          if(lowest_marks>(students[m].marks)){
+              lowest_marks=students[m].marks;
+              lowest_marks_student=students[m].name;
+          }
+      }
+      System.out.println("Highest marks Student is-: ");
+      System.out.println(highest_marks_student+":"+highest_marks);
+      System.out.println("lowest marks Student is-: ");
+      System.out.println(lowest_marks_student+":"+lowest_marks);
     }
 }
+
+
+
+
+
+
